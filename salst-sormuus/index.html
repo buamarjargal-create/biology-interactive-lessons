@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10.4.2в · Салст ба сормуус: бидний хамгаалагчид</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="screen">
+<!-- ===== SCREEN (projector) ===== -->
+<div id="scr">
+  <div class="stage" id="stage"><canvas id="cv"></canvas><div class="chip" id="chip"></div><div class="blank" id="blank"></div></div>
+  <div class="bar" id="bar">
+    <button id="bPrev" title="Өмнөх (←)">◀</button>
+    <button id="bPlay" class="big" title="Тоглуулах / зогсоох (Space)">▶</button>
+    <button id="bNext" title="Дараах (→)">▶▶</button>
+    <span class="sep"></span>
+    <div class="ctrls" id="ctrls"></div>
+    <span class="sep"></span>
+    <div class="dots" id="dots"></div><span class="pos" id="pos"></span>
+    <button id="bNotes" title="Тэмдэглэл (N)">📝</button>
+    <button id="bTeacher" title="Энэ цонхыг багшийн удирдлага болгох">👩‍🏫</button>
+    <button id="fs" title="Бүтэн дэлгэц (F)">⛶</button>
+  </div>
+  <aside class="notes" id="notes"></aside>
+  <div class="toast" id="toast"></div>
+  <div class="start" id="start"><div class="sbox">
+    <svg viewBox="0 0 120 120" width="84" height="84"><path d="M60 14 L60 40" stroke="#9fd0aa" stroke-width="9" stroke-linecap="round"/><path d="M52 44 C36 30 12 46 12 78 C12 100 30 108 48 102 C56 99 56 90 56 80 C56 66 56 52 52 44Z" fill="#ffc9d5" stroke="#ef8aa3" stroke-width="3"/><path d="M68 44 C84 30 108 46 108 78 C108 100 90 108 72 102 C64 99 64 90 64 80 C64 66 64 52 68 44Z" fill="#ffc9d5" stroke="#ef8aa3" stroke-width="3"/><g fill="#2b2533"><ellipse cx="34" cy="76" rx="3.6" ry="4.6"/><ellipse cx="86" cy="76" rx="3.6" ry="4.6"/></g><path d="M37 86 q3 3 6 0 M77 86 q3 3 6 0" stroke="#2b2533" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+    <h2>Салст ба сормуус</h2>
+    <button class="big sbig" id="sProj">🖥 Проектортой хичээл эхлүүлэх</button>
+    <p class="snote">Проектор дээр зөвхөн зураг гарна. Энэ компьютер дээр тэмдэглэл, удирдлага үлдэнэ.</p>
+    <button id="sSingle">Энэ дэлгэцээр л үзүүлэх</button>
+  </div></div>
+  <div class="fsclick" id="fsclick"><div>🖱 Энд нэг дарж бүтэн дэлгэц болго</div></div>
+</div>
+<!-- ===== TEACHER REMOTE (presenter view) ===== -->
+<div id="tch">
+  <div class="twrap">
+    <div class="thead"><h1>👩‍🏫 Илтгэгчийн харагдац</h1><span class="status" id="status">Дэлгэц хайж байна…</span><span class="sp"></span><span class="clock" id="clock">00:00</span><button id="bClock" title="Цагийг тэглэх">↺</button><button id="bReopen">🖥 Проекторын цонх нээх</button><button id="bBack">Илтгэгчийн горимоос гарах</button></div>
+    <div class="help" id="help"><b>Проекторын цонх олдсонгүй.</b> Дээд талын <b>🖥 Проекторын цонх нээх</b> товчийг дар. Шинэ цонх проектор дээр гарч ирэхэд түүн дээр нэг дарж бүтэн дэлгэц болго.</div>
+    <div class="pv">
+      <div>
+        <div class="prev"><img id="pimg" alt=""><span id="pph">Дэлгэц холбогдоогүй байна</span><b class="plabel">Сурагчдын харж буй дэлгэц</b></div>
+        <div class="transport"><button id="tPrev">◀ Өмнөх</button><button id="tPlay" class="big">▶ Тоглуулах</button><button id="tNext">Дараах ▶</button><span class="tpos" id="tpos"></span></div>
+        <div class="tctrls" id="tctrls"></div>
+        <div class="tnav" id="tnav"></div>
+      </div>
+      <div class="side">
+        <div class="nextup" id="nextup"></div>
+        <div class="tcard"><h3>🎬 Юу хийх вэ</h3><div id="tHow"></div></div>
+        <div class="tcard"><h3>💬 Ярилцах асуулт</h3><div id="tTalk"></div><h3 style="margin-top:12px">✅ Хариу</h3><div id="tAns"></div></div>
+        <div class="tcard"><h3>📖 Тайлбарлах гол санаа</h3><div id="tHtml"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
